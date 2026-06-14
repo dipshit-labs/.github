@@ -1,0 +1,49 @@
+name: "🚀 Feature Request"
+description: Suggest an idea so we can pretend we're building a unicorn.
+title: "Feature: "
+labels: ["enhancement", "needs-triage"]
+
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's the problem?
+      description: Explain the pain point. Don't be vague.
+      placeholder: |
+        The login screen is so ugly it made my pet rock cry.
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Your "brilliant" idea
+      description: Describe the feature. Keep it grounded in reality, please.
+      placeholder: |
+        Add a dark mode toggle so I don't go blind at 3 AM.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How badly do we need this?
+      description: Pick one. Choose wisely.
+      options:
+        - "🚨 Critical (The server is literally on fire)"
+        - "🔥 High (I'll lose my mind if this isn't added)"
+        - "🐢 Medium (Whenever you get around to it)"
+        - "💤 Low (Just a thought while I was procrastinating)"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: reality-check
+    attributes:
+      label: Self-Reality Check
+      options:
+        - label: I have searched for this and it doesn't exist yet.
+        - label: This isn't just a way for me to avoid doing actual work.
+        - label: I understand the CTO might close this just because they feel like it.
+    validations:
+      required: true

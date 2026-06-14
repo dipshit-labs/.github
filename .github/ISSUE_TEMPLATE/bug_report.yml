@@ -1,0 +1,62 @@
+name: "🐝 Bug Report"
+description: Tell us what broke so we can figure out who to blame.
+title: "Bug: "
+labels: ["bug", "triage"]
+
+body: 
+  - type: textarea
+    id: description
+    attributes:
+      label: What did you break?
+      description: Give us the TL;DR of the disaster.
+      placeholder: |
+        The API returns a 500 internal server error and the frontend is completely blank.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: How do we repeat your mistakes?
+      description: Provide the exact steps so I can watch it break on my machine too.
+      placeholder: |
+        1. Click the 'Submit' button on the checkout page.
+        2. Watch the loader spin infinitely.
+        3. Open console and see a wall of red text.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Where is the fire?
+      description: Choose the environment currently undergoing spontaneous combustion.
+      options:
+        - "🏠 Localhost (You broke your own machine)"
+        - "🧪 Staging / Preview Branch (You broke everyone else's machine)"
+        - "🔥 Production (Lord help us)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs, Error Walls, or Receipts
+      description: Paste your terminal output, browser console errors, or screenshots. Do not just say "it didn't work."
+      placeholder: |
+        TypeError: Cannot read properties of undefined (reading 'map')
+            at ProductList (src/components/ProductList.jsx:14:24)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: sanity-check
+    attributes:
+      label: The "Am I the Dipshit?" Checklist
+      options:
+        - label: I have restarted my local server and the issue persists.
+        - label: I didn't accidentally delete an .env file or a dependency.
+        - label: I checked the console/logs before filing this report.
+        - label: I accept full responsibility if this turns out to be a syntax error.
+    validations:
+      required: true
